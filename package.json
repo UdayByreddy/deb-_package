@@ -9,10 +9,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@azure/core-asynciterator-polyfill": "^1.0.2",
     "expo": "~49.0.23",
     "expo-status-bar": "~1.6.0",
+    "fastestsmallesttextencoderdecoder": "^1.0.22",
+    "nats.ws": "^1.29.2",
+    "node-libs-react-native": "^1.2.1",
     "react": "18.2.0",
-    "react-native": "0.72.10"
+    "react-native": "0.72.10",
+    "react-native-url-polyfill": "^2.0.0",
+    "text-encoding-polyfill": "^0.6.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

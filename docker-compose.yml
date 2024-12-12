@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  nats:
+      image: nats:latest
+      container_name: nats
+      ports:
+        - "4222:4222"
+        - "8080:8080"
+      volumes:
+        - './nats-server.conf:/etc/nats/nats-server.conf'
+      command: ["-c","/etc/nats/nats-server.conf"]
+      restart: always
+  expo-react-native-app:
+      build:
+         context: .
+         dockerfile: Dockerfile
+      ports:
+       - "19000:19000"
+       - "19001:19001"
+       - "19002:19002"
+      container_name: expo-react-native-app
+      environment:
+      - NATS_SERVER_URL=nats://nats:4222
+      depends_on:
+      - nats
+      restart: always
+
+          
